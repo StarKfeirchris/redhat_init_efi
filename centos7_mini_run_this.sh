@@ -6,7 +6,7 @@ sed -i 's/^SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config
 
 yum install -y epel-release
 
-yum install -y vim net-tools wget screen
+yum install -y vim bash-completion net-tools wget screen
 
 yum update -y
 

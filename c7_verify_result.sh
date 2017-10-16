@@ -9,8 +9,7 @@ ip a | grep -E "eth0|eth1|enp|ens|em1|em2"
 echo
 
 echo Firewall status:
-chkconfig | grep iptables
-service iptables status
+systemctl status firewalld | grep -B2 "Active:"
 echo
 
 echo Check SELinux:
