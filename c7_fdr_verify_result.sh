@@ -9,6 +9,7 @@ ip a | grep -E "eth0|eth1|enp|ens|em1|em2"
 echo
 
 echo Firewall status:
+echo "(Default active.)"
 systemctl status firewalld | grep -B2 "Active:"
 echo
 
