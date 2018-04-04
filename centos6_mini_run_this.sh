@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#Setting the execution environment.
+set -xeo pipefail
+
+# Disable iptables (firewall)
 chkconfig iptables off
 
 # Disable SELinux.
