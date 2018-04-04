@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#Setting the execution environment.
+set -xeo pipefail
+
 # If you need close firewall, remove mark.
 #systemctl disable firewalld
 
@@ -16,7 +19,7 @@ echo "# Please note that you must run 'chmod +x /etc/rc.d/rc.local' to ensure" >
 echo "# that this script will be executed during boot." >> /etc/rc.d/rc.local
 echo "">> /etc/rc.d/rc.local
 
-# If you need close firewall, remove mark.
+# If you need close firewall, remove comment.
 #chmod +x /etc/rc.d/rc.local
 #echo "systemctl stop firewalld" >> /etc/rc.d/rc.local
 
@@ -26,7 +29,7 @@ sed -i 's/^SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config
 # Backup bashrc file.
 \cp -f /etc/bashrc /etc/bashrc.original
 
-# Mark original prompt config.
+# Comment original prompt config.
 sed -i '45 s/  /   #/g' /etc/bashrc
 
 # Add new prompt config.

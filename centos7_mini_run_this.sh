@@ -1,6 +1,9 @@
 #!/bin/bash
 
-# If you need close firewall, remove mark.
+#Setting the execution environment.
+set -xeo pipefail
+
+# If you need close firewall, remove comment.
 #systemctl disable firewalld
 
 # Disable SELinux.
@@ -9,7 +12,7 @@ sed -i 's/^SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config
 # Backup bashrc file.
 \cp -f /etc/bashrc /etc/bashrc.original
 
-# Mark original prompt config.
+# Comment original prompt config.
 sed -i '41 s/  /  #/g' /etc/bashrc
 
 # Add new prompt config.
