@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Setting the execution environment.
-set -xeo pipefail
+# Setting the execution environment, only test.
+#set -xeo pipefail
 
 # Disable SELinux.
 sed -i 's/^SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config
@@ -113,13 +113,13 @@ export HISTSIZE=20000
 source /etc/bashrc
 
 # Reboot system.
-read -p "Script execution succeed, do you want to reboot?" reboot
+read -p "Script execution succeed, do you want to reboot?(yes or no) " reboot
 
 case ${reboot} in
-	yes|y )
+	yes|y|Y|Yes|yEs|yeS|YEs|yES|YES|YeS )
 		init 6
 		;;
-	no|n )
+	no|n|N|NO|nO|No )
 		echo 'Will not reboot system.'
 		;;
 	* )
