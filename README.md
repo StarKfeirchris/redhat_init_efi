@@ -5,4 +5,4 @@ Red Hat OS custom environment config
 
 #### Kernel mainline & longterm version update
 
-##### Latest release: [redhat_init_efi_180410.tar.gz](https://github.com/StarKfeirchris/redhat_init_efi/raw/master/release/redhat_init_efi_180410.tar.gz)
+##### Latest release: [redhat_init_efi_180423.tgz](https://github.com/StarKfeirchris/redhat_init_efi/raw/master/release/redhat_init_efi_180423.tgz)
