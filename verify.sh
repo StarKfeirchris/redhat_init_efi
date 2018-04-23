@@ -67,3 +67,6 @@ echo
 echo Check ntpdate:
 rpm -qa | grep ntpdate
 echo
+
+echo Check history time config:
+tail -n15 /etc/bashrc
