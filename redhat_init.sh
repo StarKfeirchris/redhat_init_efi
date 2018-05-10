@@ -1,22 +1,13 @@
 #!/bin/bash
 
-# Setting the execution environment, only test.
-#set -xeo pipefail
+# Setting the execution environment, always open.
+set -xeo pipefail
 
 # Disable SELinux.
 sed -i 's/^SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config
 
-# Install ntpdate pakage.
-yum install -y ntpdate
-
-# Update time.
-ntpdate time.stdtime.gov.tw && hwclock -w
-
-# Auto update time.
-echo "* */12 * * * root /usr/sbin/ntpdate time.stdtime.gov.tw && /sbin/hwclock -w" >> /etc/crontab
-
 # Install redhat lsb pakage
-yum install -y redhat-lsb
+yum install -y redhat-lsb --skip-broken
 
 # Get system version.
 redhat_release=$(lsb_release -irs)
@@ -89,7 +80,13 @@ case ${redhat_release} in
 esac
 
 # Install pakage.
-yum install -y vim bash-completion net-tools wget screen
+yum install -y vim bash-completion net-tools wget screen ntpdate
+
+# Update time.
+ntpdate time.stdtime.gov.tw && hwclock -w
+
+# Auto update time.
+echo "* */12 * * * root /usr/sbin/ntpdate time.stdtime.gov.tw && /sbin/hwclock -w" >> /etc/crontab
 
 # Add history time.
 echo '
@@ -113,6 +110,8 @@ export HISTSIZE=20000
 source /etc/bashrc
 
 # Reboot system.
+set +x
+
 read -p "Script execution succeed, do you want to reboot?(yes or no) " reboot
 
 case ${reboot} in
