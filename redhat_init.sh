@@ -109,6 +109,17 @@ export HISTSIZE=20000
 # Effective bashrc.
 source /etc/bashrc
 
+# Backup sysctl.conf
+\cp -f /etc/sysctl.conf /etc/sysctl.conf.original
+
+# Add TCP BBR config
+echo '
+
+# BBR congestion control
+net.core.default_qdisc = fq
+net.ipv4.tcp_congestion_control = bbr
+' >> /etc/sysctl.conf
+
 # Reboot system.
 set +x
 
