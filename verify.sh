@@ -70,3 +70,11 @@ echo
 
 echo Check history time config:
 tail -n15 /etc/bashrc
+echo
+
+echo Check TCP BBR config:
+bbr_1=$(sysctl -n net.ipv4.tcp_congestion_control)
+bbr_2=$(lsmod | grep bbr)
+echo '1. '$bbr_1 '(print screen message should be "bbr")'
+echo '2. '$bbr_2 '(print screen  message like "tcp_bbr 20480 5")'
+echo
