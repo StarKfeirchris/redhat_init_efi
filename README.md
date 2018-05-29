@@ -1,8 +1,8 @@
 Red Hat OS custom environment config
 -------------------------------
 
-#### for CentOS 6、CentOS 7、Fedora
+#### for CentOS 6.x、CentOS 7.x、Fedora 25+
 
 #### Kernel mainline & longterm version update
 
-##### Latest release: [redhat_init_efi_180510.tgz](https://github.com/StarKfeirchris/redhat_init_efi/raw/master/release/redhat_init_efi_180510.tgz)
+##### Latest release: [redhat_init_efi_180530.tgz](https://github.com/StarKfeirchris/redhat_init_efi/raw/master/release/redhat_init_efi_180530.tgz)

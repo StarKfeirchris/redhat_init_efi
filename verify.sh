@@ -35,8 +35,8 @@ sestatus | grep "SELinux status:"
 sestatus | grep "Current mode:"
 echo
 
-echo Check crontab:
-tail -n1 /etc/crontab
+echo Check time schedule:
+cat /etc/crontab | grep "stdtime"
 echo
 
 echo Check EPEL repo:
