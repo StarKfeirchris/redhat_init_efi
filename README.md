@@ -5,7 +5,7 @@ Red Hat OS custom environment config
 
 #### Kernel mainline & longterm version update
 
-##### Latest release: [redhat_init_efi_180530.tgz](https://github.com/StarKfeirchris/redhat_init_efi/raw/master/release/redhat_init_efi_180723.tgz)
+##### Latest release: [redhat_init_efi_180723.tgz](https://github.com/StarKfeirchris/redhat_init_efi/raw/master/release/redhat_init_efi_180723.tgz)
 
 ### File explain
  * **redhat_init.sh:** Main configure file, repeatable execution.
