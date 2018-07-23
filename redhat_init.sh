@@ -116,17 +116,33 @@ case ${redhat_release} in
 esac
 
 # Install pakage.
-yum install -y vim bash-completion net-tools wget screen ntpdate
+yum install -y vim bash-completion net-tools wget screen ntp ntp-doc
 
-# Update time.
-ntpdate time.stdtime.gov.tw && hwclock -w
-
-# Auto update time.
+# Remove crontab time update configuration.
 time_sync=$(cat /etc/crontab | grep 'stdtime' | cut -f5 -d'/' | cut -f2 -d'.' || true)
 
 case ${time_sync} in
 	'' )
-		echo "* */12 * * * root /usr/sbin/ntpdate time.stdtime.gov.tw && /sbin/hwclock -w" >> /etc/crontab
+		true
+		;;
+	'stdtime' )
+		sed -i '/hwclock -w$/'d /etc/crontab
+		;;
+esac
+
+# Add ntpd configuration.
+ntpd_conf=$(cat /etc/ntp.conf | grep 'stdtime' | cut -f2 -d'.' | uniq -d || true)
+
+case ${ntpd_conf} in
+	'' )
+		sed -i 's/pool /#pool /g' /etc/ntp.conf
+		sed -i 's/^server \([0-3]\).centos/#\0.centos/' /etc/ntp.conf
+		sed -i '24a server ntp2.ntu.edu.tw prefer' /etc/ntp.conf
+		sed -i '24a server ntp.ntu.edu.tw prefer' /etc/ntp.conf
+		sed -i '24a server clock.stdtime.gov.tw prefer' /etc/ntp.conf
+		sed -i '24a server time.stdtime.gov.tw prefer' /etc/ntp.conf
+		systemctl enable ntpd
+		systemctl start ntpd
 		;;
 	'stdtime' )
 		true

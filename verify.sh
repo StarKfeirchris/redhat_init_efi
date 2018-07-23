@@ -35,10 +35,6 @@ sestatus | grep "SELinux status:"
 sestatus | grep "Current mode:"
 echo
 
-echo Check time schedule:
-cat /etc/crontab | grep "stdtime"
-echo
-
 echo Check EPEL repo:
 echo "(Fedora is null.)"
 rpm -qa | grep epel
@@ -64,8 +60,12 @@ echo Check net-tools:
 rpm -qa | grep net-tools
 echo
 
-echo Check ntpdate:
-rpm -qa | grep ntpdate
+echo Check ntpd status:
+systemctl status ntpd | grep --color=auto -E "running|dead|activating"
+echo
+
+echo Check ntpd config:
+cat /etc/ntp.conf | grep -A3 'server time'
 echo
 
 echo Check history time config:
