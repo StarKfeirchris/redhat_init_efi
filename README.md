@@ -19,3 +19,17 @@ Red Hat OS custom environment config
 ### Prompt color、Show History Time
 ![](https://i.imgur.com/AUv9WH6.png)  
 Prompt font is [monofur](https://github.com/powerline/fonts/tree/master/Monofur)
+
+### How to use
+
+1. Download latest file
+```php
+curl -O https://raw.githubusercontent.com/StarKfeirchris/redhat_init_efi/master/release/redhat_init_efi_180723.tgz
+```
+
+2. Unzip .tgz file
+```php
+tar zxvf redhat_init_efi_180723.tgz
+```
+
+3. enjoy!
