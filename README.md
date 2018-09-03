@@ -32,4 +32,7 @@ curl -O https://raw.githubusercontent.com/StarKfeirchris/redhat_init_efi/master/
 tar zxvf redhat_init_efi_180723.tgz
 ```
 
-3. enjoy!
+3. Select one script and start.
+```php
+./redhat_init_efi/<script_name>.sh
+```
