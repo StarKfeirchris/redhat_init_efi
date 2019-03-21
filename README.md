@@ -5,7 +5,7 @@ Red Hat OS custom environment config
 
 #### Kernel mainline & longterm version update
 
-##### Latest release: [redhat_init_efi_180723.tgz](https://github.com/StarKfeirchris/redhat_init_efi/raw/master/release/redhat_init_efi_180723.tgz)
+##### Latest release: [redhat_init_efi_190321.tgz](https://github.com/StarKfeirchris/redhat_init_efi/raw/master/release/redhat_init_efi_190321.tgz)
 
 ### File explain
  * **redhat_init.sh:** Main configure file, repeatable execution.
@@ -24,7 +24,7 @@ Prompt font is [monofur](https://github.com/powerline/fonts/tree/master/Monofur)
 
 1. Download latest file
 ```php
-curl -O https://raw.githubusercontent.com/StarKfeirchris/redhat_init_efi/master/release/redhat_init_efi_180723.tgz
+curl -O https://raw.githubusercontent.com/StarKfeirchris/redhat_init_efi/master/release/redhat_init_efi_190321.tgz
 ```
 
 2. Unzip .tgz file
