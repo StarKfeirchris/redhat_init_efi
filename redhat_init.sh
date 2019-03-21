@@ -42,8 +42,8 @@ case ${redhat_release} in
 				sed -i '37 s/^/   /' /etc/bashrc
 				sed -i '37 s/\/v/v/' /etc/bashrc
 				yum install -y epel-release
-				yum update -y
-				yum upgrade -y
+				yum --exclude=kernel update -y
+				yum --exclude=kernel upgrade -y
 				rpm -Uvh http://www.elrepo.org/elrepo-release-6-8.el6.elrepo.noarch.rpm || true
 				rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org || true
 				yum -y --enablerepo=elrepo-kernel install kernel-ml
@@ -66,8 +66,8 @@ case ${redhat_release} in
 				sed -i '42 s/^/   /' /etc/bashrc
 				sed -i '42 s/\/v/v/' /etc/bashrc
 				yum install -y epel-release
-				yum update -y
-				yum upgrade -y
+				yum --exclude=kernel update -y
+				yum --exclude=kernel upgrade -y
 				rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm || true
 				rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org || true
 				yum -y --enablerepo=elrepo-kernel install kernel-ml
