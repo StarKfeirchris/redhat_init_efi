@@ -1,8 +1,8 @@
 #!/bin/bash
 
-yum update -y
+yum --exclude=kernel update -y
 
-yum upgrade -y
+yum --exclude=kernel upgrade -y
 
 # Update longterm kernel
 yum -y --enablerepo=elrepo-kernel install kernel-lt
