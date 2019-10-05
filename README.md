@@ -1,5 +1,6 @@
 Red Hat OS custom environment config
 --------------------------------------------------------
+#### [go to use new version](https://github.com/StarKfeirchris/Starck-linux-init)
 
 #### for CentOS 6.x、CentOS 7.x、Fedora 25+
 
